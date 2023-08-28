@@ -14,9 +14,11 @@ namespace BankAppProject
         private string phoneNumber { get;set; }
         private string email { get; set; }
         private string accountNumber { get; set; }
-        private double balance { get; set; }
+        public double balance { get; set; }
         private string accountType { get; set; }
         private string password { get; set; }
+              
+        
 
         public  Customer(string fname, string lname, string phone, string emil, string accountType, string password)
         {
@@ -35,6 +37,10 @@ namespace BankAppProject
         public void Deposit(double amount)
         {
             balance += amount;
+        }
+        public void Withdraw(double amount)
+        {
+            balance -= amount;
         }
 
         public string GetLastname() 
@@ -61,6 +67,10 @@ namespace BankAppProject
         public string GetPassword()
         {
             return password;
+        }
+        public string GetAccountNumber()
+        {
+            return accountNumber;
         }
     }
 }

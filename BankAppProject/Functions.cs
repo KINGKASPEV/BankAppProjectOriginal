@@ -16,5 +16,30 @@ namespace BankAppProject
         {
             CreateAccount.CreateCustomerAccount();
         }
+        public static void UserDeposit(double amount)
+        {
+            Transactions transactions = new Transactions();
+            transactions.Deposit(amount);
+        }
+        public static void UserWithdrwal(double amount)
+        {
+            Transactions transactions = new Transactions();
+            transactions.Withdraw(amount);
+        }
+        public static void UserTransfer()
+        {
+            Transactions transactions = new Transactions();
+            transactions.Transfer();
+        }
+        public static void UserBalance()
+        {
+            Transactions transactions = new Transactions();
+            transactions.CheckBalance();
+        }
+        public static void StatementOfAccount()
+        {
+            Transactions transactions = new Transactions();
+            transactions.GetStatementOfAccount();
+        }
     }
 }

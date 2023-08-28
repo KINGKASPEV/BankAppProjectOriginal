@@ -42,7 +42,8 @@ namespace BankAppProject
                 if (found) 
                 {
                     Logged.loggedAccount = accountNo;
-
+                    Console.WriteLine("Login successful!");
+                    //Console.Clear();
                 }
                 else
                 {
