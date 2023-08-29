@@ -155,12 +155,18 @@ namespace BankAppProject
                     if (item.Key == accountNumber)
                     {
                         Customer customer = item.Value;
-                        Console.WriteLine($"|| {customer.GetFirstname()} {customer.GetLastname()} || {customer.GetAccountNumber()} || {customer.GetAccountType()} || {customer.balance.ToString("N2")} || ... ||");
-                        Console.WriteLine("||==============================================================================================================||");
+                        Console.WriteLine($"|| {customer.GetFirstname()} {customer.GetLastname(), -15} || {customer.GetAccountNumber(),-16} || {customer.GetAccountType(),-16} || {customer.balance.ToString("N2"), -15} || {customer.GetNote(), -10} ||");
+                        Console.WriteLine("||===================================================================================================================||");
                         break;
                     }
                 }
             }
+        }
+        public string GetNote()
+        {
+            Console.WriteLine("Please drop a note");
+            string note = Console.ReadLine();
+            return note;
         }
     }
 }

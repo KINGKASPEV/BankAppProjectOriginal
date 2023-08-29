@@ -12,7 +12,6 @@ namespace BankAppProject
         {
             Welcome welcome = new Welcome();
             welcome.welcomeCustomer();
-            //Environment.Exit(8);
             Console.ReadLine();
         }
     }

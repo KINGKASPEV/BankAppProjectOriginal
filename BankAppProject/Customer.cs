@@ -17,10 +17,11 @@ namespace BankAppProject
         public double balance { get; set; }
         private string accountType { get; set; }
         private string password { get; set; }
+        private string note { get; set; }
               
         
 
-        public  Customer(string fname, string lname, string phone, string emil, string accountType, string password)
+        public  Customer(string fname, string lname, string phone, string emil, string accountType, string password, string note)
         {
             this.firstname = fname;
             this.lastname = lname;
@@ -29,6 +30,7 @@ namespace BankAppProject
             this.accountType = accountType;
             this.password = password;
             this.balance = 0;
+            this.note = note;
         }
         public string GetFirstname()
         {
@@ -71,6 +73,12 @@ namespace BankAppProject
         public string GetAccountNumber()
         {
             return accountNumber;
+        }
+        public string GetNote()
+        {
+            Console.WriteLine("Please drop a note");
+            note = Console.ReadLine();
+            return note;
         }
     }
 }

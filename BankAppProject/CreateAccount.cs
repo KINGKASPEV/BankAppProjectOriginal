@@ -11,11 +11,12 @@ namespace BankAppProject
     {
         public static void CreateCustomerAccount()
         {
-            Console.Clear();
             string firstname = GetValidName("Enter your Firstname: ");
             string lastname = GetValidName("Enter your Lastname: ");
+            Console.Clear();
 
             string phoneNumber = GetValidPhoneNumber();
+            string note = "";
 
             string email = GetValidEmail();
 
@@ -34,12 +35,12 @@ namespace BankAppProject
                 accounttype = "CURRENT";
             }
 
-            Customer customer = new Customer(firstname, lastname, phoneNumber, email, accounttype, password);
+            Customer customer = new Customer(firstname, lastname, phoneNumber, email, accounttype, password, note);
             string accountNumber = AccountNoGenerator.GenerateNewAccountNumber();
 
             ListOfCustomers.AddCustomer(accountNumber, customer);
             Console.WriteLine("Account created successfully. Your account number is :" + accountNumber);
-             string GetValidEmail()
+            string GetValidEmail()
             {
                 string email1;
                 while (true)
@@ -116,7 +117,7 @@ namespace BankAppProject
             }
              string GetValidPhoneNumber()
             {
-                string phoneNumber1;
+                //string phoneNumber1;
                 while (true)
                 {
                     Console.WriteLine("Enter your Phone Number: ");

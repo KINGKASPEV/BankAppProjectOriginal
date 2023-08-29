@@ -8,7 +8,7 @@ namespace BankAppProject
 {
     internal class Functions
     {
-        public static void LoginCustomer() 
+        public static void LoginCustomer()
         {
             Login.LoginUser();
         }
@@ -41,5 +41,11 @@ namespace BankAppProject
             Transactions transactions = new Transactions();
             transactions.GetStatementOfAccount();
         }
+        public static void UserNote()
+        {
+            Transactions transactions = new Transactions();
+            transactions.GetNote();
+        }
     }
 }
+
