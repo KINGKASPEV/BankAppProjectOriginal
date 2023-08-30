@@ -9,8 +9,11 @@ namespace BankAppProject
 {
     internal class CreateAccount
     {
+        //private const string V = "S";
         public static void CreateCustomerAccount()
         {
+            string accountNumber= AccountNoGenerator.GenerateNewAccountNumber();
+
             string firstname = GetValidName("Enter your Firstname: ");
             string lastname = GetValidName("Enter your Lastname: ");
             Console.Clear();
@@ -30,14 +33,33 @@ namespace BankAppProject
             {
                 accounttype = "SAVINGS";
             }
-            if (acctype == "C")
+            else if (acctype == "C")
             {
                 accounttype = "CURRENT";
             }
+            else
+            {
+                Console.WriteLine("invalid account type. Please select S for Savings or C for Current.");
+                return;
+            }
+            Customer customer;
+            if (accounttype == "SAVINGS")
+            {
+                //double initialBalance = 1000;
+                customer = new Customer(firstname, lastname, phoneNumber, email, accounttype, accountNumber, password, note);
+            }
+            else if (accounttype == "CURRENT")
+            {
+                customer = new Customer(firstname, lastname, phoneNumber, email, accounttype,accountNumber, password, note);
+            }
+            else
+            {
+                Console.WriteLine("Invalid account type. Please select S for Savings or  C for Current.");
+                return;
+            }
 
-            Customer customer = new Customer(firstname, lastname, phoneNumber, email, accounttype, password, note);
-            string accountNumber = AccountNoGenerator.GenerateNewAccountNumber();
-
+              //accountNumber = AccountNoGenerator.GenerateNewAccountNumber();
+        
             ListOfCustomers.AddCustomer(accountNumber, customer);
             Console.WriteLine("Account created successfully. Your account number is :" + accountNumber);
             string GetValidEmail()

@@ -46,6 +46,11 @@ namespace BankAppProject
             Transactions transactions = new Transactions();
             transactions.GetNote();
         }
+        public static void UserLogout()
+        {
+            Transactions transactions = new Transactions();
+            transactions.Logout();
+        }
     }
 }
 

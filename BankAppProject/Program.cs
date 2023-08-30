@@ -11,7 +11,7 @@ namespace BankAppProject
         static void Main(string[] args)
         {
             Welcome welcome = new Welcome();
-            welcome.welcomeCustomer();
+            welcome.WelcomeCustomer();
             Console.ReadLine();
         }
     }

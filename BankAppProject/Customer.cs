@@ -21,7 +21,7 @@ namespace BankAppProject
               
         
 
-        public  Customer(string fname, string lname, string phone, string emil, string accountType, string password, string note)
+        public  Customer(string fname, string lname, string phone, string emil, string accountType, string password, string note,string accountNumber,  double initialBalance=0)
         {
             this.firstname = fname;
             this.lastname = lname;
@@ -29,8 +29,9 @@ namespace BankAppProject
             this.email = emil;
             this.accountType = accountType;
             this.password = password;
-            this.balance = 0;
+            this.balance = initialBalance;
             this.note = note;
+            this.accountNumber = accountNumber;
         }
         public string GetFirstname()
         {
@@ -74,11 +75,9 @@ namespace BankAppProject
         {
             return accountNumber;
         }
-        public string GetNote()
+        public void GetNote(string reason)
         {
-            Console.WriteLine("Please drop a note");
-            note = Console.ReadLine();
-            return note;
+            note = reason;
         }
     }
 }

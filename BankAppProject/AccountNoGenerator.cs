@@ -15,7 +15,7 @@ namespace BankAppProject
         }
 
         static long GenerateRandomNumber(Random random, int digits)
-        {
+       {
                 long min = (long)Math.Pow(10, digits - 1);
                 long max = (long)Math.Pow(10, digits) - 1;
 
