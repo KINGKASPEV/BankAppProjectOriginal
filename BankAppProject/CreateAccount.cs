@@ -12,8 +12,7 @@ namespace BankAppProject
         //private const string V = "S";
         public static void CreateCustomerAccount()
         {
-            string accountNumber= AccountNoGenerator.GenerateNewAccountNumber();
-
+            
             string firstname = GetValidName("Enter your Firstname: ");
             string lastname = GetValidName("Enter your Lastname: ");
             Console.Clear();
@@ -46,11 +45,11 @@ namespace BankAppProject
             if (accounttype == "SAVINGS")
             {
                 //double initialBalance = 1000;
-                customer = new Customer(firstname, lastname, phoneNumber, email, accounttype, accountNumber, password, note);
+                customer = new Customer(firstname, lastname, phoneNumber, email, accounttype, password, note);
             }
             else if (accounttype == "CURRENT")
             {
-                customer = new Customer(firstname, lastname, phoneNumber, email, accounttype,accountNumber, password, note);
+                customer = new Customer(firstname, lastname, phoneNumber, email, accounttype, password, note);
             }
             else
             {
@@ -58,7 +57,7 @@ namespace BankAppProject
                 return;
             }
 
-              //accountNumber = AccountNoGenerator.GenerateNewAccountNumber();
+              string accountNumber = AccountNoGenerator.GenerateNewAccountNumber();
         
             ListOfCustomers.AddCustomer(accountNumber, customer);
             Console.WriteLine("Account created successfully. Your account number is :" + accountNumber);

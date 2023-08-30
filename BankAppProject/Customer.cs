@@ -21,7 +21,7 @@ namespace BankAppProject
               
         
 
-        public  Customer(string fname, string lname, string phone, string emil, string accountType, string password, string note,string accountNumber,  double initialBalance=0)
+        public  Customer(string fname, string lname, string phone, string emil, string accountType, string password, string note,  double initialBalance=0)
         {
             this.firstname = fname;
             this.lastname = lname;
@@ -31,7 +31,7 @@ namespace BankAppProject
             this.password = password;
             this.balance = initialBalance;
             this.note = note;
-            this.accountNumber = accountNumber;
+            //this.accountNumber = accountNumber;
         }
         public string GetFirstname()
         {
