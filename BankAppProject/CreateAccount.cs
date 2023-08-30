@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -58,6 +60,11 @@ namespace BankAppProject
             }
 
               string accountNumber = AccountNoGenerator.GenerateNewAccountNumber();
+            if (ListOfCustomers.IsAccountNumberUsed(accountNumber))
+            {
+                Console.WriteLine("Sorry, the generated account number is already in use. Please try again.");
+                return;
+            }
         
             ListOfCustomers.AddCustomer(accountNumber, customer);
             Console.WriteLine("Account created successfully. Your account number is :" + accountNumber);

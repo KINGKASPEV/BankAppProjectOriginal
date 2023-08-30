@@ -31,7 +31,7 @@ namespace BankAppProject
             this.password = password;
             this.balance = initialBalance;
             this.note = note;
-            //this.accountNumber = accountNumber;
+            //git this.accountNumber = accountNumber;
         }
         public string GetFirstname()
         {

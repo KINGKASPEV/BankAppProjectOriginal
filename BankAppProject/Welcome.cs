@@ -13,7 +13,7 @@ namespace BankAppProject
             while (true)
             {
                 Console.WriteLine("****************************************************");
-                Console.WriteLine("         WELCOME TO MY BANKING SYSTEM               ");
+                Console.WriteLine("         WELCOME TO DEROYALS BANKING SYSTEM               ");
                 Console.WriteLine("****************************************************");
                 Console.WriteLine("We're here to help you manage your finances.");
                 Console.WriteLine("Choose an option from the menu below:");
@@ -24,7 +24,7 @@ namespace BankAppProject
                 Console.WriteLine("----------------------------------------------------");
                 //Console.Clear();
 
-                string input = Console.ReadLine();
+                string input = Console.ReadLine()?.Trim().ToLower();    
                 Console.WriteLine();
 
                 switch (input)
