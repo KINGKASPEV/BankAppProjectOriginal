@@ -60,13 +60,13 @@ namespace BankAppProject
             }
 
               string accountNumber = AccountNoGenerator.GenerateNewAccountNumber();
-            if (ListOfCustomers.IsAccountNumberUsed(accountNumber))
+            if (ListOfCustomers.IsEmailUsed(email))
             {
-                Console.WriteLine("Sorry, the generated account number is already in use. Please try again.");
+                Console.WriteLine("Sorry, the provided email address is already in use. Please try again.");
                 return;
             }
         
-            ListOfCustomers.AddCustomer(accountNumber, customer);
+            ListOfCustomers.AddCustomer( customer);
             Console.WriteLine("Account created successfully. Your account number is :" + accountNumber);
             string GetValidEmail()
             {
